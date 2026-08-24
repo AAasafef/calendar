@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../models/calendar_entry.dart';
 import '../services/calendar_store.dart';
-import '../widgets/ciantis_bottom_nav.dart';
 
 enum CalendarMode { day, week, month, year }
 
@@ -75,10 +74,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
             Expanded(child: _buildMode()),
           ],
         ),
-      ),
-      bottomNavigationBar: CiantisBottomNav(
-        currentIndex: 1,
-        onTap: (_) {},
       ),
     );
   }
