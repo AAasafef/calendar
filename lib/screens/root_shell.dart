@@ -8,9 +8,6 @@ import 'home_screen.dart';
 import 'more_screen.dart';
 import 'tasks_screen.dart';
 
-/// Owns the shared bottom nav (Home / Calendar / + / Tasks / More) and
-/// switches between the tab screens, matching the reference's nav bar
-/// across every screen.
 class RootShell extends StatefulWidget {
   const RootShell({super.key});
 
@@ -19,14 +16,10 @@ class RootShell extends StatefulWidget {
 }
 
 class _RootShellState extends State<RootShell> {
-  int _index = 0;
+  int _index = 1;
   int _reloadTick = 0;
   final CalendarStore _store = CalendarStore();
 
-  // Keyed on _reloadTick so that saving a new event (from quick-add) forces
-  // Home/Calendar/Tasks to recreate their state and re-read from storage,
-  // while switching tabs in between keeps each screen's state (scroll
-  // position, selected day, etc.) untouched.
   List<Widget> _pages() => [
         HomeScreen(key: ValueKey('home_$_reloadTick')),
         CalendarScreen(key: ValueKey('cal_$_reloadTick')),
