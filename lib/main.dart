@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/calendar_screen.dart';
+import 'screens/root_shell.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +36,7 @@ class CiantisCalendarApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CalendarScreen(),
+      home: const RootShell(),
     );
   }
 }
